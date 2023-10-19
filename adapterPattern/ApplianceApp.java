@@ -13,6 +13,15 @@ public class ApplianceApp {
         Speaker speaker = new Speaker();
         RemoteControllerFunction speakerRc = new SpeakerAdapter(speaker);
 
+        Laptop laptop = new Laptop();
+        PowerOutlet laptopPo = new LaptopAdapter(laptop);
+
+        Refrigerator refrigerator = new Refrigerator();
+        PowerOutlet refrigeratorPo = new RefrigeratorAdapter(refrigerator);
+
+        SmartphoneCharger smartphoneCharger = new SmartphoneCharger();
+        PowerOutlet smartphoneChargerPo = new SmartphoneAdapter(smartphoneCharger);
+
         //turn on the appliances
         System.out.println(tvRc.powerOn());
         System.out.println(airConRc.powerOn());
@@ -25,5 +34,11 @@ public class ApplianceApp {
         System.out.println(airConRc.pressPlusButton());
         System.out.println(speakerRc.pressPlusButton());
 
+        System.out.println();
+
+        //plug in to charge
+        System.out.println(laptopPo.plugIn());
+        System.out.println(refrigeratorPo.plugIn());
+        System.out.println(smartphoneChargerPo.plugIn());
     }
 }
